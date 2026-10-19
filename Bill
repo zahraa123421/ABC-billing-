@@ -40,4 +40,60 @@ public class ItemBill {
 
    }
 
+}   if (total > 50) {
+
+            discount = total * 0.10;
+
+        }
+
+ 
+
+        System.out.print("Enter coupon code (or NONE): ");
+
+        String coupon = input.next();
+
+ 
+
+        if (coupon.equalsIgnoreCase("SAVE5")) {
+
+            // Coupon discount cannot exceed the remaining bill.
+
+            couponDiscount = Math.min(5, total - discount);
+
+            System.out.println("Coupon applied successfully!");
+
+        } else if (!coupon.equalsIgnoreCase("NONE")) {
+
+            System.out.println("Invalid coupon code.");
+
+        }
+
+ 
+
+        double finalAmount = total - discount - couponDiscount;
+
+ 
+
+        System.out.println("\n---------- BILL ----------");
+
+        System.out.printf("Item 1:          %.3f OMR%n", item1);
+
+        System.out.printf("Item 2:          %.3f OMR%n", item2);
+
+        System.out.printf("Item 3:          %.3f OMR%n", item3);
+
+        System.out.printf("Total:           %.3f OMR%n", total);
+
+        System.out.printf("10%% discount:    %.3f OMR%n", discount);
+
+        System.out.printf("Coupon discount: %.3f OMR%n", couponDiscount);
+
+        System.out.printf("Amount to pay:   %.3f OMR%n", finalAmount);
+
+ 
+
+        input.close();
+
+    }
+
 }
